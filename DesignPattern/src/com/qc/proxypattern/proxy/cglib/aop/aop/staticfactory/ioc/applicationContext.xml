@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- 工厂静态方法IOC配置，不需要声明对象 -->
+    <bean id="proxy" class="com.qc.proxypattern.proxy.cglib.aop.aop.staticfactory.ProxyFactory" factory-method="getProxyInstance">
+        <constructor-arg index="0" ref="userDao"/>
+        <constructor-arg index="1" ref="AOP"/>
+    </bean>
+	<!-- 开启注解自动扫描，需要给 UserDao 和 AOP 类添加 @Component 注解 -->
+    <context:component-scan base-package="com.qc.proxypattern.proxy.cglib.aop.aop.staticfactory"/>
+	
+
+</beans>
