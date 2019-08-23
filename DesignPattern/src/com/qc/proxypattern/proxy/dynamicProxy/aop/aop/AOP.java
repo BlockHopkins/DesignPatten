@@ -1,4 +1,4 @@
-package com.qc.proxypattern.proxy.cglib.aop.aop;
+package com.qc.proxypattern.proxy.dynamicProxy.aop.aop;
 
 import org.springframework.stereotype.Component;
 

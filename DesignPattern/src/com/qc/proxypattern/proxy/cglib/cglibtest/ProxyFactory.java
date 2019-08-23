@@ -39,11 +39,22 @@ public class ProxyFactory implements MethodInterceptor{
 		return en.create();
 	}
 	
+	/**
+	 * 拦截所有目标类方法的调用
+	 * 
+	 * @param obj表示目标类的实例，
+	 * @param method为目标类方法的反射对象，
+	 * @param args为方法的动态入参，
+	 * @param proxy为代理类
+	 * 
+	 * proxy.invokeSuper(obj, args)通过代理类调用父类中的方法
+	 */
 	@Override
 	public Object intercept(Object obj, Method method, Object[] args, MethodProxy proxy) throws Throwable {
 		System.out.println("开始事务......");
 		//执行目标对象的方法
-		Object returnValue = method.invoke(target, args);
+//		Object returnValue = method.invoke(target, args);
+		Object returnValue = proxy.invokeSuper(obj, args);
 		System.out.println("提交事务......");
 		return returnValue;
 	}

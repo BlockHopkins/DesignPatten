@@ -9,13 +9,19 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!-- 工厂静态方法IOC配置，不需要声明对象 -->
-    <bean id="proxy" class="com.qc.proxypattern.proxy.cglib.aop.aop.staticfactory.ProxyFactory" factory-method="getProxyInstance">
+
+	<!-- 使用工厂非静态方法实现AOP：先创建工厂，再创建代理类对象 -->
+    <!--创建工厂-->
+    <bean id="factory" class="com.qc.proxypattern.proxy.dynamicProxy.aop.aop.nonstaticfactory.ProxyFactory"/>
+
+    <!--通过工厂创建代理-->
+    <bean id="IUser" class="com.qc.proxypattern.proxy.cglib.aop.basic.IUser" factory-bean="factory" factory-method="getProxyInstance">
         <constructor-arg index="0" ref="userDao"/>
         <constructor-arg index="1" ref="AOP"/>
     </bean>
-	<!-- 开启注解自动扫描，需要给 UserDao 和 AOP 类添加 @Component 注解 -->
-    <context:component-scan base-package="com.qc.proxypattern.proxy.cglib.aop.aop.staticfactory"/>
-	
+
+
+    <context:component-scan base-package="com.qc.proxypattern.proxy.dynamicProxy.aop.aop.nonstaticfactory"/>
+
 
 </beans>

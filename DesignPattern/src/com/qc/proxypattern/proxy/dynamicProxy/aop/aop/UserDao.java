@@ -1,6 +1,6 @@
-package com.qc.proxypattern.proxy.cglib.aop.aop;
+package com.qc.proxypattern.proxy.dynamicProxy.aop.aop;
 
-import com.qc.proxypattern.proxy.cglib.aop.basic.IUser;
+import com.qc.proxypattern.proxy.dynamicProxy.aop.basic.IUser;
 
 /**
  * 将其他Dao也要用到的开启事务、关闭事务方法（关注点）提取到 切面类AOP中，

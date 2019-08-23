@@ -1,7 +1,7 @@
-package com.qc.proxypattern.proxy.cglib.aop.aop.nonstaticfactory;
+package com.qc.proxypattern.proxy.dynamicProxy.aop.aop.nonstaticfactory;
 
-import com.qc.proxypattern.proxy.cglib.aop.aop.AOP;
-import com.qc.proxypattern.proxy.cglib.aop.basic.IUser;
+import com.qc.proxypattern.proxy.dynamicProxy.aop.aop.AOP;
+import com.qc.proxypattern.proxy.dynamicProxy.aop.basic.IUser;
 
 /**
  * AOP 动态代理实现 

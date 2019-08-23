@@ -1,6 +1,6 @@
-package com.qc.proxypattern.proxy.cglib.aop.tradition;
+package com.qc.proxypattern.proxy.dynamicProxy.aop.tradition;
 
-import com.qc.proxypattern.proxy.cglib.aop.basic.IUser;
+import com.qc.proxypattern.proxy.dynamicProxy.aop.basic.IUser;
 
 /**
  *  

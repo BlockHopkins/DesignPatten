@@ -1,10 +1,10 @@
-package com.qc.proxypattern.proxy.cglib.aop.aop.nonstaticfactory;
+package com.qc.proxypattern.proxy.dynamicProxy.aop.aop.nonstaticfactory;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
-import com.qc.proxypattern.proxy.cglib.aop.aop.AOP;
+import com.qc.proxypattern.proxy.dynamicProxy.aop.aop.AOP;
 
 /**
  * AOP代理：工厂非静态方法
